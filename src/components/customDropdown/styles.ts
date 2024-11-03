@@ -2,6 +2,7 @@ import styled from "styled-components/native";
 
 export const CustomDropdownContainer = styled.View`
   position: relative;
+  width: 100%;
   background: #17171a;
   border: 1px solid #252529;
   border-radius: 6px;
@@ -26,10 +27,9 @@ export const DropdownList = styled.View`
   top: 100%;
   left: 0;
   width: 100%;
-  background: #17171a;
+  top: 42px;
   border: 1px solid #252529;
   border-radius: 6px;
-  margin-top: 4px;
   z-index: 10;
 `;
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   HeaderBackground,
+  PlusIcon,
   Container,
   MainContainer,
   TitleMainContainer,
@@ -15,11 +16,13 @@ import {
   BlockInputsAmount,
   InputAmount,
   CategoryFormBlock,
+  BlockButtonSendForm,
   ButtonSendForm
 } from './style';
 import { Text } from 'react-native';
 import CustomDropdown from '../src/components/customDropdown';
 import CustomDropdownAmount from '../src/components/customDropDownAmount';
+import ItemUnit from '../src/components/itemUnit';
 
 // Opções de unidades e categorias para seleção
 const units = [
@@ -34,6 +37,15 @@ const categories = [
   { label: 'Carne', value: 'CARNE' },
   { label: 'Fruta', value: 'FRUTA' },
   { label: 'Bebida', value: 'BEBIDA' }
+];
+
+const itemsList = [
+  { id: 1, name: 'Maçã', amount: '2 unidades', category: 'Fruta' },
+  { id: 2, name: 'Pão Francês', amount: '4 unidades', category: 'Padaria' },
+  { id: 3, name: 'Brócolis', amount: '1 unidade', category: 'Legume' },
+  { id: 4, name: 'Leite', amount: '2 litros', category: 'Bebida' },
+  { id: 5, name: 'Peito de Frango', amount: '2 kg', category: 'Carne' },
+  { id: 6, name: 'Mamão', amount: '1 unidade', category: 'Fruta' },
 ];
 
 const App: React.FC = () => {
@@ -78,11 +90,22 @@ const App: React.FC = () => {
                 onSelect={setSelectedCategory}
               />
             </CategoryFormBlock>
-            <ButtonSendForm>
-              <TextTitle>+</TextTitle>
-            </ButtonSendForm>
+            <BlockButtonSendForm>
+              <ButtonSendForm>
+                <PlusIcon />
+              </ButtonSendForm>
+            </BlockButtonSendForm>
           </BottomFormsContainer>
         </FormsContainer>
+
+        {itemsList.map((item) => (
+          <ItemUnit
+            key={item.id}
+            name={item.name}
+            amount={item.amount}
+            category={item.category}
+          />
+        ))}
       </MainContainer>
     </Container>
   );

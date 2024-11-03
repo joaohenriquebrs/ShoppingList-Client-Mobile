@@ -25,13 +25,12 @@ export const TextMainSelect = styled.Text`
 
 export const DropdownList = styled.View`
   position: absolute;
-  top: 38px;
+  top: 42px;
   left: 0;
   width: 63px;
   background: #17171a;
   border: 1px solid #252529;
   border-radius: 6px;
-  margin-top: 4px;
   z-index: 10;
 `;
 

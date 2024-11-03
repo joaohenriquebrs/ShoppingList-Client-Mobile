@@ -30,7 +30,7 @@ const CustomDropdown = ({ options, onSelect }) => {
                 <DropdownList>
                     {options.map((item) => (
                         <DropdownListItem key={item.value} onPress={() => handleSelect(item.value)}>
-                            <Text>{item.label}</Text>
+                            <Text style={{ color: '#FFF' }}>{item.label}</Text>
                         </DropdownListItem>
                     ))}
                 </DropdownList>

@@ -1,17 +1,18 @@
 import styled from "styled-components/native";
-import { headerBackgroundLogo } from "@assets";
+import { headerBackgroundLogo, plusIcon } from "@assets";
 import { TextInput, Text } from 'react-native';
 
 export const HeaderBackground = styled(headerBackgroundLogo)``;
 
+export const PlusIcon = styled(plusIcon)``;
+
 export const Container = styled.View`
   color: #fff;
   width: 100%;
-  height: 110%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
   position: absolute;
 `;
 
@@ -24,7 +25,7 @@ export const MainContainer = styled.View`
   position: absolute;
   z-index: 2;
   color: #fff;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const TitleMainContainer = styled.View`
@@ -41,6 +42,7 @@ export const FormsContainer = styled.View`
   display: flex; 
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 20px;
 `;
 
 export const TopFormsContainer = styled.View``;
@@ -97,18 +99,23 @@ export const InputCategory = styled(TextInput)`
   width: 100%;
 `;
 
-export const ButtonSendForm = styled.View`
+export const BlockButtonSendForm = styled.View`
+  display: flex;
   width: 12%;
+  position: relative;
+`;
+
+
+export const ButtonSendForm = styled.View`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
   border-radius: 99px;
   background: #7450ac;
   border: none;
-
-  &:hover {
-    background: #6e4ca3;
-  }
+  z-index: 4000;
 `;
