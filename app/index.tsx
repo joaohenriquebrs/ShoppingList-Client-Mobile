@@ -19,7 +19,7 @@ import {
   BlockButtonSendForm,
   ButtonSendForm
 } from './style';
-import { Text } from 'react-native';
+import { Text, TextInput } from 'react-native';
 import CustomDropdown from '../src/components/customDropdown';
 import CustomDropdownAmount from '../src/components/customDropDownAmount';
 import ItemUnit from '../src/components/itemUnit';
@@ -51,6 +51,8 @@ const itemsList = [
 const App: React.FC = () => {
   const [selectedUnit, setSelectedUnit] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [isInputNameFocused, setInputNameFocused] = useState(false);
+  const [isInputAmountFocused, setInputAmountFocused] = useState(false);
 
   return (
     <Container>
@@ -65,7 +67,14 @@ const App: React.FC = () => {
               <SubTitleInput>
                 <Text style={{ color: '#AFABB6', fontSize: 12 }}>Item</Text>
               </SubTitleInput>
-              <InputNameItem />
+              <InputNameItem
+                onFocus={() => setInputNameFocused(true)}
+                onBlur={() => setInputNameFocused(false)}
+                style={{
+                  borderColor: isInputNameFocused ? '#7450AC' : '#252529',
+                  borderWidth: 1,
+                }}
+              />
             </ItemFormBlock>
           </TopFormsContainer>
           <BottomFormsContainer>
@@ -74,7 +83,14 @@ const App: React.FC = () => {
                 <Text style={{ color: '#AFABB6', fontSize: 12 }}>Quantidade</Text>
               </SubTitleInput>
               <BlockInputsAmount>
-                <InputAmount />
+                <InputAmount
+                  onFocus={() => setInputAmountFocused(true)}
+                  onBlur={() => setInputAmountFocused(false)}
+                  style={{
+                    borderColor: isInputAmountFocused ? '#7450AC' : '#252529',
+                    borderWidth: 1,
+                  }}
+                />
                 <CustomDropdownAmount
                   options={units}
                   onSelect={setSelectedUnit}

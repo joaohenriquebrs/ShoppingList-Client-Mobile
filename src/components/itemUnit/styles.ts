@@ -1,8 +1,12 @@
 import styled from "styled-components/native";
-import { fruitIcon, configurationIcon } from "@assets";
+import { fruitIcon, configurationIcon, vegetableIcon, meatIcon, drinkIcon, bakeryIcon } from "@assets";
 import { TextInput } from 'react-native';
 
 export const FruitIcon = styled(fruitIcon)``;
+export const VegetableIcon = styled(vegetableIcon)``;
+export const MeatIcon = styled(meatIcon)``;
+export const DrinkIcon = styled(drinkIcon)``;
+export const BakeryIcon = styled(bakeryIcon)``;
 export const ConfigurationIcon = styled(configurationIcon)``;
 
 export const ItemUnitContainer = styled.View<{ isChecked: boolean }>`
@@ -44,7 +48,7 @@ export const RightContainer = styled.View`
   gap: 12px;
 `;
 
-export const CategoryItemIcon = styled.View`
+export const CategoryItemIcon = styled.View<{ category: string }>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -52,7 +56,22 @@ export const CategoryItemIcon = styled.View`
   border-radius: 99px;
   gap: 5px;
   color: #E07B67;
-  background: #261A17;
+  background: ${({ category }) => {
+    switch (category) {
+      case 'Fruta':
+        return '#261A17';
+      case 'Padaria':
+        return '#211E12';
+      case 'Legume':
+        return '#1C2015';
+      case 'Bebida':
+        return '#1A1D23';
+      case 'Carne':
+        return '#251622';
+      default:
+        return '#261A17';
+    }
+  }};
   padding: 8px 16px;
 `;
 

@@ -10,6 +10,10 @@ import {
     CategoryItemIcon,
     ConfigurationItemButton,
     FruitIcon,
+    VegetableIcon,
+    MeatIcon,
+    DrinkIcon,
+    BakeryIcon,
     ConfigurationIcon
 } from './styles';
 import { Text, TouchableOpacity } from 'react-native';
@@ -23,6 +27,23 @@ interface ItemUnitProps {
 const ItemUnit: React.FC<ItemUnitProps> = ({ name, amount, category }) => {
     const [isChecked, setIsChecked] = useState(false);
 
+    const renderCategoryIcon = () => {
+        switch (category) {
+            case 'Fruta':
+                return <FruitIcon />;
+            case 'Padaria':
+                return <BakeryIcon />;
+            case 'Legume':
+                return <VegetableIcon />;
+            case 'Bebida':
+                return <DrinkIcon />;
+            case 'Carne':
+                return <MeatIcon />;
+            default:
+                return <FruitIcon />;
+        }
+    };
+
     return (
         <ItemUnitContainer isChecked={isChecked}>
             <LeftContainer>
@@ -35,7 +56,7 @@ const ItemUnit: React.FC<ItemUnitProps> = ({ name, amount, category }) => {
                             borderRadius: 2,
                             borderWidth: isChecked ? 0 : 2,
                             borderColor: isChecked ? 'transparent' : '#A881E6',
-                            backgroundColor: isChecked ? '#2F723D' : '',
+                            backgroundColor: isChecked ? '#2F723D' : 'transparent',
                             justifyContent: 'center',
                             alignItems: 'center',
                         }}
@@ -53,8 +74,8 @@ const ItemUnit: React.FC<ItemUnitProps> = ({ name, amount, category }) => {
                 </DetailsItem>
             </LeftContainer>
             <RightContainer>
-                <CategoryItemIcon>
-                    <FruitIcon />
+                <CategoryItemIcon category={category}>
+                    {renderCategoryIcon()}
                 </CategoryItemIcon>
                 <ConfigurationItemButton>
                     <ConfigurationIcon />

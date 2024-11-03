@@ -1,7 +1,6 @@
 import styled from "styled-components/native";
 
 export const CustomDropdownContainer = styled.View`
-  position: relative;
   width: 100%;
   background: #17171a;
   border: 1px solid #252529;
@@ -24,13 +23,13 @@ export const TextMainSelect = styled.Text`
 
 export const DropdownList = styled.View`
   position: absolute;
-  top: 100%;
   left: 0;
   width: 100%;
   top: 42px;
   border: 1px solid #252529;
   border-radius: 6px;
-  z-index: 10;
+  z-index: 1000;
+  background: #17171a;
 `;
 
 export const DropdownListItem = styled.TouchableOpacity`

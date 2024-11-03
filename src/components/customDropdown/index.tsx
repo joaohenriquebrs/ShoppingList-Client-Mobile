@@ -6,7 +6,6 @@ import {
     TextMainSelect,
     DropdownList,
     DropdownListItem,
-    TitleBlockItem
 } from './styles';
 import { Text } from 'react-native';
 

@@ -55,9 +55,9 @@ export const SubTitleInput = styled.View`
 
 export const InputNameItem = styled(TextInput)`
   height: 40px;
-  border: 1px solid #252529;
   border-radius: 6px;
   padding: 12px;
+  color: #FFF;
 `;
 
 export const BottomFormsContainer = styled.View`
@@ -74,16 +74,15 @@ export const BlockInputsAmount = styled.View`
   display: flex;
   flex-direction: row;
   width: 100%;
-  position: relative;
 `;
 
 export const InputAmount = styled(TextInput)` 
   height: 40px;
-  border: 1px solid #252529;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   padding: 12px;
   width: 50%;
+  color: #FFF;
 `;
 
 export const CategoryFormBlock = styled.View`
@@ -117,5 +116,5 @@ export const ButtonSendForm = styled.View`
   border-radius: 99px;
   background: #7450ac;
   border: none;
-  z-index: 4000;
+  z-index: 10;
 `;
